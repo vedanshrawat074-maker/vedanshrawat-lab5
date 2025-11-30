@@ -1,0 +1,623 @@
+* {
+  box-sizing: border-box; /* Makes width/height include padding and border */
+  margin: 0;              /* Remove default outer space */
+  padding: 0;             /* Remove default inner space */
+}
+
+/* Basic page styles */
+body {
+  background-color: whitesmoke;              /* Light gray page background */
+  color: black;                              /* Default text color */
+}
+
+/* This class keeps content centered and not too wide */
+.page-container {
+  max-width: 1200px; /* Page will not grow wider than 1200px */
+  margin: 0 auto;    /* Center the container horizontally */
+  padding: 0 20px;   /* Small space on left and right */
+}
+
+/* ===============================
+   Reusable button styles
+   =============================== */
+
+/* Main button style (used for important actions) */
+.main-button {
+  background-color: lightcoral; /* Soft reddish color */
+  color: white;                 /* White text */
+  border: none;                 /* No border line */
+  padding: 0.6rem 1rem;         /* Vertical and horizontal padding */
+  border-radius: 20px;          /* Rounded pill shape */
+  cursor: pointer;              /* Show pointer cursor on hover */
+  font-size: 0.95rem;           /* Slightly smaller than default size */
+}
+
+/* When mouse hovers over main button */
+.main-button:hover {
+  opacity: 0.9; /* Make it slightly transparent for a hover effect */
+}
+
+/* Outline button (white with border) */
+.outline-button {
+  background-color: white;         /* White background */
+  color: black;                    /* Black text */
+  border: 1px solid lightgray;     /* Light border around button */
+  padding: 0.6rem 1rem;            /* Space inside */
+  border-radius: 20px;             /* Rounded shape */
+  text-decoration: none;           /* Remove underline from links */
+  font-size: 0.95rem;              /* Similar size to main button */
+}
+
+/* Hover effect for outline button */
+.outline-button:hover {
+  background-color: whitesmoke; /* Slight gray background on hover */
+}
+
+/* Dark button used on product cards */
+.dark-button {
+  background-color: black;   /* Black background */
+  color: white;              /* White text */
+  border: none;              /* No border line */
+  padding: 0.5rem 0.9rem;    /* Inner spacing */
+  border-radius: 18px;       /* Rounded corners */
+  cursor: pointer;           /* Pointer cursor */
+  font-size: 0.9rem;         /* Slightly smaller text */
+}
+
+/* Hover effect for dark button */
+.dark-button:hover {
+  opacity: 0.9; /* Slightly transparent on hover */
+}
+
+/* Utility class: make element full width */
+.full-width {
+  width: 100%; /* Takes entire available width */
+}
+
+
+/* =========================================
+   2) HEADER (TOP NAVIGATION BAR)
+   ========================================= */
+
+/* Header bar that sticks to top */
+.page-header {
+  position: sticky;                       /* Stays stuck to top when scrolling */
+  top: 0;                                 /* Stick to very top */
+  background-color: white;                /* White background */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06); /* Small shadow under header */
+  z-index: 100;                           /* Keep it above other elements */
+}
+
+/* Flex row inside header */
+.header-row {
+  display: flex;                          /* Place items in a row */
+  align-items: center;                    /* Vertically center items */
+  justify-content: space-between;         /* Space items as far apart as possible */
+  padding: 16px 0;                        /* Top and bottom padding */
+}
+
+/* Logo text style */
+.logo-text {
+  font-weight: 700;       /* Bold text */
+  letter-spacing: 1px;    /* Space between letters */
+  font-size: 1.2rem;      /* Slightly larger font */
+}
+
+/* Wrapper for search box */
+.search-box {
+  display: flex;           /* Place input and button in row */
+  align-items: center;     /* Center vertically */
+  gap: 8px;                /* Space between input and button */
+}
+
+/* Search input style */
+.search-box input {
+  padding: 10px 12px;           /* Inner spacing */
+  border-radius: 999px;         /* Very rounded corners (pill) */
+  border: 1px solid lightgray;  /* Light gray border */
+  min-width: 260px;             /* Minimum width so it isn’t too small */
+}
+
+/* When user clicks on search input */
+.search-box input:focus {
+  outline: none;       /* Remove blue outline in some browsers */
+  border-color: gray;  /* Darker border when focused */
+}
+
+/* Right side icons and login button */
+.header-actions {
+  display: flex;           /* Horizontal layout */
+  align-items: center;     /* Vertical center */
+  gap: 8px;                /* Space between buttons */
+}
+
+/* Round icon buttons for cart and account */
+.icon-button {
+  background-color: white;            /* White background */
+  border: 1px solid lightgray;        /* Light border */
+  border-radius: 50%;                 /* Perfect circle */
+  padding: 8px;                       /* Space inside */
+  cursor: pointer;                    /* Pointer cursor */
+}
+
+
+/* =========================================
+   3) HERO SECTION (BIG BANNER)
+   ========================================= */
+
+/* Main hero area with background image */
+.hero-section {
+  margin-top: 18px;   /* Space above hero */
+  height: 400px;      /* Fixed height */
+  border-radius: 10px; /* Rounded corners */
+  /* Background uses an image plus a dark overlay
+     so text stays readable */
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.6),  /* Darker on the left side */
+      rgba(0, 0, 0, 0.3)   /* Lighter on the right side */
+    ),
+    url("https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=1400&q=80");
+  background-size: cover;     /* Make image cover whole area */
+  background-position: center;/* Center the image */
+  position: relative;         /* Needed for positioning text inside */
+  color: white;               /* White text on hero */
+  overflow: hidden;           /* Hide anything going outside corners */
+}
+
+/* Block that holds title and paragraph inside hero */
+.hero-text {
+  position: absolute;          /* Place it on top of the background */
+  left: 40px;                  /* Distance from left side */
+  top: 50%;                    /* Middle vertically */
+  transform: translateY(-50%); /* Move it up so it's truly centered */
+  max-width: 430px;            /* Limit the width of the text */
+}
+
+/* Hero title style */
+.hero-text h1 {
+  font-size: 2.4rem;           /* Large text */
+  margin-bottom: 8px;          /* Space below heading */
+}
+
+/* Hero paragraph style */
+.hero-text p {
+  margin-bottom: 16px;         /* Space below paragraph */
+  color: floralwhite;          /* Slightly warmer white color */
+}
+
+/* Buttons inside hero */
+.hero-buttons {
+  display: flex;    /* Place buttons next to each other */
+  gap: 12px;        /* Space between buttons */
+}
+
+
+/* =========================================
+   4) FLASH SALE BANNER
+   ========================================= */
+
+/* Colored bar for flash sale message */
+.flash-banner {
+  margin: 18px 0;                          /* Space above and below */
+  padding: 12px 16px;                      /* Inner spacing */
+  background-image: linear-gradient(
+    to right,
+    lightcoral,                            /* Start color */
+    salmon                                 /* End color */
+  );
+  color: white;                            /* White text */
+  border-radius: 8px;                      /* Rounded corners */
+  display: flex;                           /* Row layout */
+  align-items: center;                     /* Center vertically */
+  gap: 18px;                               /* Space between texts */
+  justify-content: center;                 /* Center everything in banner */
+}
+
+/* Wrapper for timer numbers */
+.flash-timer {
+  display: flex;   /* Numbers in a row */
+  gap: 6px;        /* Space between numbers */
+}
+
+/* Each timer number */
+.flash-timer span {
+  background-color: rgba(0, 0, 0, 0.15); /* Semi-transparent dark background */
+  padding: 6px 10px;                     /* Space inside */
+  border-radius: 6px;                    /* Soft corners */
+}
+
+
+/* =========================================
+   5) MAIN LAYOUT (SIDEBAR + PRODUCTS)
+   ========================================= */
+
+/* Grid layout: left column filters, right column products */
+.content-layout {
+  display: grid;                         /* Enable grid layout */
+  grid-template-columns: 260px 1fr;      /* Left column fixed 260px, right fills rest */
+  gap: 24px;                             /* Space between columns */
+  margin-bottom: 40px;                   /* Space below layout */
+}
+
+/* ------------- Sidebar styles ------------- */
+
+/* Box containing all filters */
+.filter-box {
+  background-color: white;               /* White background */
+  padding: 18px;                         /* Inner space */
+  border-radius: 10px;                   /* Rounded corners */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04); /* Slight shadow */
+}
+
+/* Filters main title */
+.filter-box h3 {
+  margin-bottom: 12px;                   /* Space below title */
+}
+
+/* Group around a set of filters */
+.filter-group {
+  margin-bottom: 16px;                   /* Space between groups */
+}
+
+/* Small title inside filter group */
+.filter-title {
+  font-weight: 600;                      /* Semi-bold */
+  color: dimgray;                        /* Dark gray text */
+  margin-bottom: 8px;                    /* Space below */
+}
+
+/* Label for each checkbox */
+.filter-label {
+  display: block;                        /* Each label on its own line */
+  font-size: 0.9rem;                     /* Slightly small text */
+  color: dimgray;                        /* Gray text */
+  margin-bottom: 6px;                    /* Space under each label */
+}
+
+/* Space between checkbox and text */
+.filter-label input {
+  margin-right: 6px;
+}
+
+/* ------------- Filter chips (All, Men, Women) ------------- */
+
+/* Wrapper for all chip buttons */
+.filter-chips {
+  display: flex;       /* Row layout */
+  gap: 8px;            /* Space between chips */
+  flex-wrap: wrap;     /* Allow wrapping to next line on small screens */
+}
+
+/* Basic chip button style */
+.chip-button {
+  border-radius: 16px;              /* Rounded pill */
+  border: 1px solid lightgray;      /* Light border */
+  padding: 6px 10px;                /* Inner space */
+  background-color: white;          /* White background */
+  font-size: 0.9rem;                /* Slightly smaller text */
+  cursor: pointer;                  /* Pointer cursor */
+}
+
+/* Hover style for chips */
+.chip-button:hover {
+  background-color: whitesmoke;     /* Light gray background */
+}
+
+/* Active chip (selected) */
+.chip-active {
+  background-color: lightcoral;     /* Same color as main button */
+  color: white;                     /* White text */
+  border-color: lightcoral;         /* Match border color */
+}
+
+/* ------------- Main shop area (right column) ------------- */
+
+.shop-main {
+  width: 100%; /* Take full width assigned by grid */
+}
+
+/* Category cards just under hero ("Men, Women, Accessories") */
+.category-row {
+  display: flex;        /* Row layout */
+  gap: 12px;            /* Space between cards */
+  flex-wrap: wrap;      /* Wrap to new line on small screens */
+  margin-bottom: 20px;  /* Space below category row */
+}
+
+/* Small card for each category */
+.category-card {
+  background-color: white;                          /* White card */
+  padding: 12px;                                    /* Inner space */
+  border-radius: 10px;                              /* Rounded corners */
+  display: flex;                                    /* Row layout */
+  align-items: center;                              /* Center vertically */
+  gap: 10px;                                        /* Space between image and text */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.04);       /* Soft shadow */
+}
+
+/* Small circular images in category cards */
+.category-card img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;      /* Make them circles */
+  object-fit: cover;       /* Crop image nicely */
+}
+
+
+/* =========================================
+   6) PRODUCT CARDS
+   ========================================= */
+
+/* Grid layout for all main products */
+.product-grid {
+  display: grid;                                  /* Use CSS grid */
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  /* "auto-fit" means as many columns as fit
+     "minmax(230px, 1fr)" means each column is at least 230px wide */
+  gap: 18px;                                      /* Space between cards */
+}
+
+/* Card that holds one product */
+.product-card {
+  background-color: white;                        /* White background */
+  border-radius: 10px;                            /* Rounded corners */
+  padding: 16px;                                  /* Inner spacing */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.04);     /* Soft shadow */
+  transition: transform 0.2s ease,                /* Smooth move effect */
+              box-shadow 0.2s ease;               /* Smooth shadow change */
+}
+
+/* Hover effect for product card */
+.product-card:hover {
+  transform: translateY(-4px);                    /* Move card slightly up */
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.08);    /* Stronger shadow */
+}
+
+/* Image area inside product card */
+.product-image {
+  height: 170px;               /* Fixed height of image area */
+  border-radius: 8px;          /* Rounded corners */
+  margin-bottom: 10px;         /* Space underneath */
+  overflow: hidden;            /* Cut off any overflow */
+  background-size: cover;      /* For background images: cover area */
+  background-position: center; /* Center background image */
+}
+
+/* Make <img> fill the product image area */
+.product-image img {
+  width: 100%;             /* Full width */
+  height: 100%;            /* Full height */
+  object-fit: cover;       /* Crop image nicely */
+}
+
+/* Helper for cards that use background-image instead of <img> */
+.background-image {
+  background-size: cover;      /* Make background fill box */
+  background-position: center; /* Center the image */
+}
+
+/* Title text for products */
+.product-title {
+  font-size: 1rem;          /* Normal size */
+  margin-bottom: 6px;       /* Small space under title */
+}
+
+/* Price text for products */
+.product-price {
+  color: lightcoral;        /* Highlight color for price */
+  font-weight: 700;         /* Bold price */
+  margin-bottom: 10px;      /* Space below price */
+}
+
+/* Heading like "Best Sellers" */
+.section-heading {
+  font-weight: 700;        /* Bold text */
+  margin: 26px 0 16px 4px; /* Top, right, bottom, left margin */
+}
+
+/* Best sellers row (3 smaller cards) */
+.best-row {
+  display: grid;                      /* Use grid layout */
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 18px;                          /* Space between cards */
+}
+
+/* Smaller image for best seller cards */
+.small-card .product-image {
+  height: 140px; /* Slightly shorter image area */
+}
+
+/* OPTIONAL: Give best-seller cards images using CSS
+   This uses nth-child selector, which is a bit advanced
+   but you can leave it as-is and it will "just work" */
+
+/* First best seller card image */
+.best-row .product-card:nth-child(1) .product-image {
+  background-image: url("https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=600&q=60");
+}
+
+/* Second best seller card image */
+.best-row .product-card:nth-child(2) .product-image {
+  background-image: url("https://images.unsplash.com/photo-1519741491646-15c6d1c782e2?auto=format&fit=crop&w=600&q=60");
+}
+
+/* Third best seller card image */
+.best-row .product-card:nth-child(3) .product-image {
+  background-image: url("https://images.unsplash.com/photo-1495121605193-b116b5b09ec5?auto=format&fit=crop&w=600&q=60");
+}
+
+
+/* =========================================
+   7) TESTIMONIALS (CUSTOMER REVIEWS)
+   ========================================= */
+
+/* Whole testimonials block */
+.testimonials {
+  background-color: white;                          /* White card */
+  border-radius: 10px;                              /* Rounded corners */
+  padding: 18px;                                    /* Inner spacing */
+  margin-top: 24px;                                 /* Space above */
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.03);       /* Soft shadow */
+}
+
+/* Row of testimonial cards */
+.testimonial-row {
+  display: flex;         /* Row layout */
+  gap: 12px;             /* Space between cards */
+  flex-wrap: wrap;       /* Wrap on smaller screens */
+}
+
+/* One testimonial card (photo + text) */
+.testimonial-card {
+  display: flex;               /* Photo + text side by side */
+  gap: 10px;                   /* Space between photo and text */
+  align-items: flex-start;     /* Align at the top */
+  flex: 1 1 220px;             /* Allow cards to resize */
+}
+
+/* Circular customer image */
+.testimonial-card img {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;          /* Circle shape */
+  object-fit: cover;           /* Crop image nicely */
+}
+
+/* Review text */
+.testimonial-card p {
+  font-size: 0.95rem;          /* Slightly smaller text */
+  color: dimgray;              /* Gray color */
+}
+
+
+/* =========================================
+   8) NEWSLETTER SECTION (EMAIL SIGNUP)
+   ========================================= */
+
+/* Dark bar with email and button */
+.newsletter-section {
+  background-color: black;     /* Black background */
+  color: white;                /* White text */
+  border-radius: 10px;         /* Rounded corners */
+  padding: 24px;               /* Inner space */
+  margin: 30px 0;              /* Space above and below */
+  display: flex;               /* Row layout */
+  align-items: center;         /* Center vertically */
+  justify-content: space-between; /* Spread text and form apart */
+  gap: 14px;                   /* Space between text and form */
+  flex-wrap: wrap;             /* Wrap items on smaller screens */
+}
+
+/* Newsletter form (input + button) */
+.newsletter-form {
+  display: flex;     /* Row layout */
+  gap: 10px;         /* Space between input and button */
+  flex-wrap: wrap;   /* Allow wrapping on small screens */
+}
+
+/* Email input style */
+.newsletter-form input {
+  padding: 12px 14px;  /* Inner space */
+  border-radius: 999px;/* Pill shape */
+  border: none;        /* No border line */
+  min-width: 260px;    /* Minimum width */
+}
+
+
+/* =========================================
+   9) FOOTER
+   ========================================= */
+
+/* Bottom bar of the page */
+.page-footer {
+  background-color: black; /* Black background */
+  color: white;            /* White text */
+  padding: 24px 0;         /* Top and bottom padding */
+}
+
+/* Footer content layout */
+.footer-row {
+  display: flex;           /* Row layout */
+  gap: 20px;               /* Space between sections */
+  flex-wrap: wrap;         /* Wrap on small screens */
+  justify-content: space-between; /* Spread groups apart */
+}
+
+/* Footer paragraph style */
+.footer-row p {
+  font-size: 0.9rem;   /* Slightly smaller text */
+  color: gainsboro;    /* Light gray color */
+}
+
+
+/* =========================================
+   10) RESPONSIVE RULES (FOR SMALL SCREENS)
+   ========================================= */
+
+/* Styles that apply when screen width is 900px or less */
+@media (max-width: 900px) {
+
+  /* Stack sidebar on top of products */
+  .content-layout {
+    grid-template-columns: 1fr; /* Only one column */
+  }
+
+  /* Move filter box below product section (optional) */
+  .filter-box {
+    order: 2; /* Puts filter box after shop-main */
+  }
+
+  /* Adjust hero text position on smaller screens */
+  .hero-text {
+    left: 20px;          /* Closer to left edge */
+    max-width: 320px;    /* Narrower text block */
+  }
+
+  /* Make search input smaller */
+  .search-box input {
+    min-width: 150px;
+  }
+
+  /* Best sellers: only 2 cards per row */
+  .best-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Extra rules for very small screens (like phones) */
+@media (max-width: 600px) {
+
+  /* Hero image becomes smaller in height and can use slightly different image */
+  .hero-section {
+    height: 320px; /* Shorter hero */
+    background-image:
+      linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.3)
+      ),
+      url("https://images.unsplash.com/photo-1564468781197-8c7a1b2f0f0f?auto=format&fit=crop&w=900&q=60");
+  }
+
+  /* Smaller hero title */
+  .hero-text h1 {
+    font-size: 1.7rem;
+  }
+
+  /* Stack hero buttons vertically */
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  /* Product grid shows one card per row */
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Best seller cards also single column */
+  .best-row {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,310 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INSTAFASHION - Shop</title>
+  <!-- This attaches your CSS file so styles apply to the page -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<!--  HEADER AREA-->
+<header class="page-header">
+  <!-- The header stays at the top and contains logo, search box, login etc -->
+  <div class="page-container header-row">
+    <div class="logo-text">INSTAFASHION</div>
+    <!-- Simple text logo -->
+    <div class="search-box">
+      <!-- Search input and button -->
+      <input
+        type="text"
+        placeholder="Search for products..."
+        aria-label="Search"
+      />
+      <!-- Input where users type -->
+      <button class="main-button" aria-label="Search">Search</button>
+      <!-- Button next to the search bar -->
+    </div>
+
+    <div class="header-actions">
+      <!-- Icons for cart, user, and login button -->
+
+      <button class="icon-button" aria-label="Cart">🛒</button>
+      <button class="icon-button" aria-label="Account">👤</button>
+      <button class="main-button">Login</button>
+    </div>
+  </div>
+</header>
+
+<!--  MAIN PAGE CONTENT-->
+<main>
+  <section class="page-container">
+
+    <!--HERO SECTION -->
+    <section class="hero-section">
+      <!-- Big photo and welcome message -->
+      <div class="hero-text">
+        <!-- Text inside the background image -->
+
+        <h1>Winter Sale is Here!</h1>
+        <p>
+          Up to 30% off on selected styles. Refresh your wardrobe with the
+          latest trends.
+        </p>
+
+        <div class="hero-buttons">
+          <!-- Buttons inside hero -->
+
+          <!-- Clicking these scrolls to page sections -->
+          <a href="#products" class="main-button">Shop Now</a>
+          <a href="#best" class="outline-button">Trending</a>
+        </div>
+      </div>
+    </section>
+
+    <!--FLASH SALE BANNEr -->
+    <div class="flash-banner">
+      <span>⚡ Flash Sale: Extra 20% OFF! Ends in</span>
+
+      <!-- Simple timer display -->
+      <div class="flash-timer">
+        <span>02</span>
+        <span>15</span>
+        <span>42</span>
+      </div>
+    </div>
+
+    <!-- 
+        TWO COLUMN LAYOUT
+        (Filters + Products)-   -   -->
+    <section class="content-layout">
+
+      <!-- ======= FILTER SIDEBAR ======= -->
+      <aside class="filter-box">
+        <h3>Filters</h3>
+
+        <!-- Category Filter -->
+        <div class="filter-group">
+          <p class="filter-title">Category</p>
+
+          <div class="filter-chips">
+            <button class="chip-button chip-active">All</button>
+            <button class="chip-button">Men</button>
+            <button class="chip-button">Women</button>
+          </div>
+        </div>
+
+        <!-- Price Filter -->
+        <div class="filter-group">
+          <p class="filter-title">Price</p>
+          <label class="filter-label">
+            <input type="checkbox" /> Under $50
+          </label>
+          <label class="filter-label">
+            <input type="checkbox" /> $50 - $100
+          </label>
+          <label class="filter-label">
+            <input type="checkbox" /> $100+
+          </label>
+        </div>
+
+        <!-- Color Filter -->
+        <div class="filter-group">
+          <p class="filter-title">Color</p>
+          <label class="filter-label">
+            <input type="checkbox" /> Black
+          </label>
+          <label class="filter-label">
+            <input type="checkbox" /> White
+          </label>
+          <label class="filter-label">
+            <input type="checkbox" /> Blue
+          </label>
+        </div>
+
+        <button class="main-button full-width">Reset Filters</button>
+      </aside>
+
+
+
+      <!-- ======= PRODUCTS AREA ======= -->
+      <section class="shop-main">
+
+        <!-- Quick Categories -->
+        <div id="products" class="category-row">
+          <!-- These are small clickable boxes -->
+          <div class="category-card">
+            <img src="https://st.perplexity.ai/estatic/0b226c450798410ac541646c86ec31afd840e5beab817a5d84fa821e7db61981ec84c3b4a3f072a7a2e1899c9fb06c6ec15a2c08391ec8c88703bae2b459d243b5471998261eea9a3e2104c136e798e7ae432950b896225ca08dd1ff34ed8d35" alt="Men" />
+            <span>Men</span>
+          </div>
+
+          <div class="category-card">
+            <img src="https://st.perplexity.ai/estatic/0b226c450798410ac541646c86ec31afd840e5beab817a5d84fa821e7db61981ec84c3b4a3f072a7a2e1899c9fb06c6e9b04961170f46ad5c3097e935ee93dd2e41fe7765a83d8a3c086cf343fe0e25b53acb64b30e2fcec4ec7da4182a8eefe" alt="Women" />
+            <span>Women</span>
+          </div>
+
+          <div class="category-card">
+            <img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/a089ae8b-b770-5631-8e06-c65ef784aa7a/3cad438c-2376-5176-b979-1af575deada0.jpg" alt="Accessories" />
+            <span>Accessories</span>
+          </div>
+        </div>
+
+        <!-- =======================
+             PRODUCT GRID
+        ======================== -->
+        <div class="product-grid">
+
+          <!-- Each product is inside <article> -->
+          <article class="product-card">
+            <div class="product-image">
+              <img src="https://st.perplexity.ai/estatic/0b226c450798410ac541646c86ec31afd840e5beab817a5d84fa821e7db61981ec84c3b4a3f072a7a2e1899c9fb06c6e7288bdaf0cce69b20096a99dc01aff1dddac96209a2545924d5c6e5b5702c3c5aec8726b552a90058aa6c968cd20c943"
+              alt="Classic Denim Jacket" />
+            </div>
+            <h4 class="product-title">Classic Denim Jacket</h4>
+            <p class="product-price">$79.99</p>
+            <button class="dark-button">Add to Cart</button>
+          </article>
+
+          <!-- Repeat product card pattern -->
+          <article class="product-card">
+            <div class="product-image">
+              <img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/05e5208b-21a6-55e8-b444-76fe2a144d7e/67deb6c3-b137-50e2-95c8-31f1b8543917.jpg"
+              alt="Men's White Sneakers" />
+            </div>
+            <h4 class="product-title">Men’s White Sneakers</h4>
+            <p class="product-price">$59.99</p>
+            <button class="dark-button">Add to Cart</button>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/8fa66d7e-6471-5b95-9f35-12d9ae01e275/bf087634-002d-5f7b-a83a-b6ccf7250387.jpg"
+              alt="Women's Summer Dress" />
+            </div>
+            <h4 class="product-title">Women's Summer Dress</h4>
+            <p class="product-price">$49.99</p>
+            <button class="dark-button">Add to Cart</button>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/7aa559a3-87f9-5c93-97b8-29ffbb0010c8/7996102f-1c6f-580b-887b-57bcba4c1503.jpg"
+              alt="Leather Handbag" />
+            </div>
+            <h4 class="product-title">Leather Handbag</h4>
+            <p class="product-price">$120.00</p>
+            <button class="dark-button">Add to Cart</button>
+          </article>
+        </div>
+
+        <!-- =======================
+          BEST SELLERS SECTION
+        ======================== -->
+        <h3 class="section-heading">Best Sellers</h3>
+
+        <div id="best" class="best-row">
+          <!-- Smaller product cards -->
+          <article class="product-card small-card">
+            <div class="product-image">
+                <img src="https://st.perplexity.ai/estatic/0b226c450798410ac541646c86ec31afd840e5beab817a5d84fa821e7db61981ec84c3b4a3f072a7a2e1899c9fb06c6e7288bdaf0cce69b20096a99dc01aff1dddac96209a2545924d5c6e5b5702c3c5aec8726b552a90058aa6c968cd20c943" alt="Denim Jacket" />
+            </div>
+            <h4 class="product-title">Denim Jacket</h4>
+            <p class="product-price">$79.99</p>
+          </article>
+
+          <article class="product-card small-card">
+            <div class="product-image">
+                <img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/05e5208b-21a6-55e8-b444-76fe2a144d7e/67deb6c3-b137-50e2-95c8-31f1b8543917.jpg" alt="White Sneakers" />
+            </div>    
+            <h4 class="product-title">White Sneakers</h4>
+            <p class="product-price">$59.99</p>
+          </article>
+
+          <article class="product-card small-card">     
+            <div class="product-image">
+                <img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/8fa66d7e-6471-5b95-9f35-12d9ae01e275/bf087634-002d-5f7b-a83a-b6ccf7250387.jpg" alt="Summer Dress" />
+            </div>    
+            <h4 class="product-title">Summer Dress</h4>
+            <p class="product-price">$49.99</p>
+          </article>
+        </div>
+
+        <!-- =======================
+            TESTIMONIALS
+        ======================== -->
+        <section class="testimonials">
+          <h3 class="section-heading">What Our Customers Say</h3>
+
+          <div class="testimonial-row">
+
+            <div class="testimonial-card">
+              <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Emily" />
+              <div>
+                <strong>Emily R.</strong>
+                <p>"Absolutely love the quality and fast shipping!"</p>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="James" />
+              <div>
+                <strong>James K.</strong>
+                <p>"The flash sale was a steal!"</p>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Sophia" />
+              <div>
+                <strong>Sophia L.</strong>
+                <p>"Customer service was amazing!"</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =======================
+          EMAIL NEWSLETTER SECTION
+        ======================== -->
+        <section class="newsletter-section" id="newsletter">
+
+          <div class="newsletter-text">
+            <h3>Stay in the Loop!</h3>
+            <p>Sign up for exclusive offers, new arrivals, and more.</p>
+          </div>
+
+          <!-- Newsletter signup input -->
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" />
+            <button class="main-button">Subscribe</button>
+          </form>
+        </section>
+
+      </section> <!-- end of product area -->
+
+    </section> <!-- layout section -->
+  </section> <!-- page container -->
+</main>
+
+<!-- =======================
+        FOOTER
+======================== -->
+<footer class="page-footer">
+  <div class="page-container footer-row">
+    <div>
+      <strong>Account</strong>
+      <p>Login • Register • Order History</p>
+    </div>
+    <div>
+      <strong>Help</strong>
+      <p>Contact • Shipping • Returns</p>
+    </div>
+    <div>
+      <strong>Policies</strong>
+      <p>Privacy • Terms of Service</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
